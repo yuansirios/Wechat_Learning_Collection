@@ -1,0 +1,82 @@
+
+/* debug边框显示 */
+.debugRed {
+  border: 1px solid red;
+}
+
+.debugBlue {
+  border: 1px solid blue;
+}
+
+.debugGreen {
+  border: 1px solid green;
+}
+
+/* 圆角 */
+.raduis {
+  border-radius: 25px;
+}
+
+/* 横向布局 从左到右 */
+
+.rowLayout {
+  display: flex;
+  flex-direction: row;
+}
+
+/* 纵向布局 从上到下 */
+
+.columnLayout {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 水平居中 */
+
+.rowCenter {
+  justify-content: center;
+  display: flex;
+}
+
+/* 水平靠右 */
+.rowRight {
+  justify-content: flex-end;
+  display: flex;
+}
+
+/* 垂直居中 */
+
+.columnCenter {
+  align-items: center;
+  display: flex;
+}
+
+/* 垂直底部 */
+
+.columnBottom {
+  align-items: flex-end;
+  display: flex;
+}
+
+/* 水平垂直居中 */
+
+.row-column-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 动态换行 */
+.wrap {
+  flex-flow:wrap;
+}
+
+/* 底部悬浮按钮 */
+
+.bottom-button {
+  position: fixed;
+  bottom: 0;
+  height: 45px;
+  width: 100%;
+}
+

@@ -1,0 +1,29 @@
+
+@import '../../../common/layout.wxss';
+
+/* page设置当前窗口背景色 */
+page{
+  background-color: #F5F5F5
+}
+
+.marginLeft{
+  margin-left: 10px;
+}
+
+/* 最多显示4行 */
+.car-title {
+  /* overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; */
+}
+
+/* 定义.text-content设置文本样式 */
+.cell-content{
+  padding: 10px;
+  align-content: center;
+  border-bottom: 1rpx solid #F5F5F5;
+  background-color: #FFFFFF
+}

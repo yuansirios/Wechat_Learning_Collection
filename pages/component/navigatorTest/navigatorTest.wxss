@@ -1,0 +1,2 @@
+/* 按钮边距10 */
+button {margin: 10px;}

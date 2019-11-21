@@ -1,0 +1,15 @@
+<view>
+    <block wx:for="{{carList}}" wx:for-item="item" wx:key="index">
+        <view class="rowLayout,cell-content">
+            <view class="debugBlue,columnLayout" style="align-self:center;">
+                <image class="debugGreen" src="{{item.imgUrl}}" style="width:150px;height:100px;" mode="aspectFill"></image>
+            </view>
+            <view class="columnLayout">
+                <text class="debugRed,marginLeft,car-title" style="">{{item.carName}}</text>
+                <view class="debugBlue,marginLeft,columnBottom" style="flex:1;">
+                    指导价：{{item.carPrice}}
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

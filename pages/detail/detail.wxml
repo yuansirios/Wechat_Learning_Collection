@@ -1,0 +1,5 @@
+<view>
+我是detail
+参数：{{arg1}} | {{arg2}}
+  <button type="primary" bindtap="goBackWithArgs"> 返回传参 </button>
+</view>

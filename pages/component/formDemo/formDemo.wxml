@@ -1,0 +1,27 @@
+<!-- pages/component/formDemo/formDemo.wxml -->
+<view>
+    <view class="rowCenter,headIcon">
+        <image src='{{userInfo.avatarUrl}}' class="debugGreen,headSize" />
+    </view>
+    <view class="accountStyle">
+        <input type="text" class="inputStyle" bindinput="inputAccount" value='{{accountStr}}' placeholder="用户名" />
+    </view>
+    <view>
+        <input class="inputStyle" type="text" password='true' placeholder="密码" bindinput="inputPassword" />
+    </view>
+    <button class="btnStyle" catchtap="login">用户登录</button>
+    <button class="btnStyle" catchtap="fileUpload">图片上传</button>
+    1、复选框示例
+    <checkbox-group bindchange="checkboxChange">
+        <label wx:for="{{checkList}}" wx:for-item="item" wx:key="index">
+            <checkbox value="{{item.name}}" checked="{{item.checked}}" />
+            {{item.value}}
+        </label>
+    </checkbox-group>
+    2、单选框框示例
+    <radio-group class="radio-group" bindchange="radioChange">
+        <radio class="radio" wx:for-items="{{checkList}}" wx:key="index" value="{{item.name}}" checked="{{item.checked}}">
+            {{item.value}}
+        </radio>
+    </radio-group>
+</view>

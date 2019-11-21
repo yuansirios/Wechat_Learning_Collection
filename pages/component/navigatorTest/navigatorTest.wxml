@@ -1,0 +1,6 @@
+<view>
+{{reData.key}}
+  <button type="default" size="100rpx" bindtap="pushView" loading="{{loading}}" plain="{{plain}}" hover-class="other-button-hover"> 跳转页面及传参 </button>
+  <button type="primary" bindtap="switchTab"> switchTab </button>
+  <button type="warn" bindtap="redirectToA"> redirectTo </button>
+</view>

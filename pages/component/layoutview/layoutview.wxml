@@ -1,0 +1,69 @@
+<!--pages/layoutview/layoutview.wxml-->
+<view class="debugRed">
+
+  1、从左到右，水平居中和水平垂直居中
+  <view class="rowLayout,rowCenter">
+    <view class="debugBlue,item">test1</view>
+    <view class="debugGreen,item,columnCenter">test2</view>
+    <view class="debugRed,item,row-column-center">test3</view>
+  </view>
+
+  2、从上到下，水平居中和水平垂直居中
+  <view class="columnLayout,rowCenter" style="align-items:center;">
+    <view class="debugBlue,item">test1</view>
+    <view class="debugGreen,item,columnCenter">test2</view>
+    <view class="debugRed,item,row-column-center">test3</view>
+  </view>
+
+  3、Flex布局示例
+  <view class="debugGreen">
+    <view class="rowLayout,debugRed,rowCenter">
+      <view class="debugBlue,item,rowCenter">上</view>
+    </view>
+
+    <view class="rowLayout,debugGreen" style="justify-content:space-between;">
+      <view class="debugGreen,item,columnCenter">左</view>
+      <view class="debugRed,item,row-column-center">中</view>
+      <view class="debugBlue,item,rowRight,columnCenter">右</view>
+    </view>
+
+    <view class="rowLayout,debugBlue,rowCenter">
+      <view class="debugGreen,item,rowCenter,columnBottom">下</view>
+    </view>
+  </view>
+
+  4、warp示例
+  <view class="rowLayout,wrap,debugRed">
+    <view class="item,debugGreen,row-column-center,raduis">1</view>
+    <view class="item,debugGreen,row-column-center,raduis">2</view>
+    <view class="item,debugGreen,row-column-center,raduis">3</view>
+    <view class="item,debugGreen,row-column-center,raduis">4</view>
+    <view class="item,debugGreen,row-column-center,raduis">5</view>
+    <view class="item,debugGreen,row-column-center,raduis">6</view>
+    <view class="item,debugGreen,row-column-center,raduis">7</view>
+  </view>
+
+  5、绝对定位
+  <!-- 相对定位，子元素的absolute才能生效 -->
+  <view class="debugGreen,marginTop" style="width: 100%;height:200px;position:relative;">
+    <!-- //父元素的position位置固定，这个绝对定位才会生效 -->
+    <view class="item,debugGreen" style="position: absolute;left: 10px;top: 10px;">左上角</view>
+    <view class="item,debugGreen,columnBottom" style="position: absolute;left: 10px;bottom: 10px;">左下角</view>
+    <view class="item,debugGreen,rowRight" style="position: absolute;right: 10px;top: 10px;">右上角</view>
+
+    <view class="item,debugGreen,rowRight,columnBottom" style="position: absolute;right: 10px;bottom: 10px;">右下角</view>
+
+    <view class="item,debugGreen,row-column-center" style="position: absolute;top: 80px;left: 100px;">中间</view>
+  </view>
+
+  3、样式设置
+  <view class="debugGreen,textStyle,italicAndUnderLine,marginTop">字体设置+斜体+下划线</view>
+
+  <view class="debugBlue,textStyle,line_through,marginTop">字体设置+斜体+删除线</view>
+
+  <view class="debugGreen,marginTop">
+    <text class="textStyle,textOtherSetting" style="margin-top:20px">ABC段落缩进+行间距+字间距+字母间距+对齐方式\nDEF段落缩进+行间距+字间距+字母间距+对齐方式</text>
+  </view>
+
+
+</view>

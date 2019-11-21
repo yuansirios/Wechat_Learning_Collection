@@ -1,0 +1,44 @@
+<view>数据绑定：{{message}}</view>
+<view data-name="{{theName}}">属性绑定</view>
+<view hidden="{{flag ? true : false}}">Hidden</view>
+<view>
+  1、列表渲染
+  <block wx:for="{{items}}" wx:for-item="item" wx:key="index">
+    <view>{{index}}:{{item.name}}</view>
+  </block>
+</view>
+
+<view>
+  2、条件渲染
+  <view wx:if="{{condition === 1}}"> one </view>
+  <view wx:elif="{{condition === 2}}"> two </view>
+  <view wx:else> other </view>
+</view>
+
+<!-- 内联样式 -->
+<view class="container" style="background-color:blue">
+  3、模板引用
+  <template is="tempItem" data="{{...userInfo}}"></template>
+</view>
+
+<!-- 模板引用 -->
+<template name="tempItem">
+  <view>
+    <view>收件人：{{name}}</view>
+    <view>联系方式：{{phone}}</view>
+    <view>地址：{{address}}</view>
+  </view>
+</template>
+
+<view>
+  4、wxs:
+  m1:{{m1.message}}
+</view>
+<wxs module="m1">
+module.exports ={
+  message:'Hello,world!'
+}
+</wxs>
+
+5、事件
+<view id="123" bindtap="clickMe">点我！</view>
