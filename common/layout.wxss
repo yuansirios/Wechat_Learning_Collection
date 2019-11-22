@@ -1,5 +1,5 @@
-
 /* debug边框显示 */
+
 .debugRed {
   border: 1px solid red;
 }
@@ -13,8 +13,16 @@
 }
 
 /* 圆角 */
+
 .raduis {
   border-radius: 25px;
+}
+
+.container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: flex;
 }
 
 /* 横向布局 从左到右 */
@@ -39,6 +47,7 @@
 }
 
 /* 水平靠右 */
+
 .rowRight {
   justify-content: flex-end;
   display: flex;
@@ -67,8 +76,9 @@
 }
 
 /* 动态换行 */
+
 .wrap {
-  flex-flow:wrap;
+  flex-flow: wrap;
 }
 
 /* 底部悬浮按钮 */
@@ -79,4 +89,3 @@
   height: 45px;
   width: 100%;
 }
-

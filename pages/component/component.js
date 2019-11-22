@@ -10,6 +10,10 @@ Page({
   data: {
     list: [
       {
+        "title": "基础示例",
+        "component": "../component/baseDemo/baseDemo"
+      },
+      {
         "title": "导航示例",
         "component": "./navigatorTest/navigatorTest"
       },
@@ -38,8 +42,12 @@ Page({
         "component": "./formDemo/formDemo"
       },
       {
-        "title": "列表示例",
+        "title": "列表+模板示例",
         "component": "./listDemo/listDemo"
+      },
+      {
+        "title": "页面适配",
+        "component": "./viewAdapter/viewAdapter"
       }
     ]
   },
@@ -139,21 +147,7 @@ Page({
   onUnload: function () {
 
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
+  
   /**
    * 用户点击右上角分享
    */

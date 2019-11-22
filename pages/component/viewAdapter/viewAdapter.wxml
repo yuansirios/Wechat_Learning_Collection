@@ -1,0 +1,8 @@
+<!-- pages/component/viewAdapter/viewAdapter.wxml -->
+<view class="container,row-column-center,columnLayout">
+    <view class="textStyle">页面适配</view>
+    <view class="row-column-center">
+        <button class="btnStyle">按钮适配</button>
+    </view>
+    <text>全部都用rpx，以iPhone 6设计为基准 \n比如：iPhone 6上为20px，则应该写40rpx \n比例为1：2</text>
+</view>

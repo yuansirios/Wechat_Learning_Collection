@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "列表示例",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance":50
 }

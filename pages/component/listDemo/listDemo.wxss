@@ -1,23 +1,32 @@
 
 @import '../../../common/layout.wxss';
 
+/* 导入模板文件样式 */
+@import '../../../template/emptyView/emptyView.wxss';
+
 /* page设置当前窗口背景色 */
 page{
-  background-color: #F5F5F5
+  background-color: #F5F5F5;
 }
 
 .marginLeft{
   margin-left: 10px;
 }
 
+.emptyStyle{
+  width: 200rpx;
+  height: 200rpx;
+  background-color: aqua;
+}
+
 /* 最多显示4行 */
 .car-title {
-  /* overflow: hidden;
+  overflow: hidden;
   word-break: break-all;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4; */
+  -webkit-line-clamp: 4;
 }
 
 /* 定义.text-content设置文本样式 */

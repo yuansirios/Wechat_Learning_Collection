@@ -6,40 +6,99 @@ Page({
    */
   data: {
     // 数据源
-    carList: [
-      {
-        "imgUrl":"http://hsjry.oss-cn-hangzhou.aliyuncs.com/car/s50ev%EF%BC%8D%E5%8F%B3%E4%BE%A7135%E5%BA%A6-%E5%9B%9B%E8%89%B2%E5%88%86%E5%B1%82.png",
-        "carName":"长安逸动EV",
-        "carPrice":"207300",
-      },
-      {
-        "imgUrl": "http://hsjry.oss-cn-hangzhou.aliyuncs.com/car/s50ev%EF%BC%8D%E5%8F%B3%E4%BE%A7135%E5%BA%A6-%E5%9B%9B%E8%89%B2%E5%88%86%E5%B1%82.png",
-        "carName": "长安逸动EV飞机4449版长安逸动EV飞机4449版长安逸动EV飞机4449版长安逸动EV飞机4449版",
-        "carPrice": "207300",
-      },
-      {
-        "imgUrl": "http://hsjry.oss-cn-hangzhou.aliyuncs.com/car/s50ev%EF%BC%8D%E5%8F%B3%E4%BE%A7135%E5%BA%A6-%E5%9B%9B%E8%89%B2%E5%88%86%E5%B1%82.png",
-        "carName": "长安",
-        "carPrice": "207300",
-      },
-      {
-        "imgUrl": "http://hsjry.oss-cn-hangzhou.aliyuncs.com/car/s50ev%EF%BC%8D%E5%8F%B3%E4%BE%A7135%E5%BA%A6-%E5%9B%9B%E8%89%B2%E5%88%86%E5%B1%82.png",
-        "carName": "长安长安长安长安长安长安长安长安长安长安长安长安长安长安长安长安长安长安长安长安长安安长安长安长安长安长安长安长安长安长安长安长安安长",
-        "carPrice": "207300",
-      },
-      {
-        "imgUrl": "http://hsjry.oss-cn-hangzhou.aliyuncs.com/car/s50ev%EF%BC%8D%E5%8F%B3%E4%BE%A7135%E5%BA%A6-%E5%9B%9B%E8%89%B2%E5%88%86%E5%B1%82.png",
-        "carName": "长安长安长安长安长安长安长安长安长安长安长安长长安长安长安长安长安长安长安长安长安长长安长安长安长安长安长安长安长安长安长长安长安长安长安长安长安长安长安长安长安长安长安长安长安长安长安长安长安长安安长安长安长安长安长安长安长安长安长安长安长安安长",
-        "carPrice": "207300",
+    carList: null,
+    currentPage: 0,
+    noSource: true,
+    loadFinish: false,
+  },
+
+  noSourceClick(){
+    console.log('暂无数据')
+  },
+
+  noNetClick(){
+    console.log('暂无网络')
+  },
+
+  loadRequest(reload) {
+
+    if (!reload &&
+      this.data.loadFinish) {
+      return;
+    }
+
+    // 显示顶部刷新图标
+    wx.showLoading({
+      title: '加载中…',
+      mask: true
+    });
+
+    setTimeout(() => {
+
+      if (reload) {
+        this.data.currentPage = 0
+        this.setData({
+          carList: require('./carList.js').carList,
+          loadFinish: false,
+        });
+        // 停止下拉动作
+        wx.stopPullDownRefresh();
+      } else {
+
+        this.data.currentPage++
+
+        var moreArr = require('./carList.js').carList
+        
+        if (moreArr.length > 0) {
+          moreArr = this.data.carList.concat(moreArr)
+          this.setData({
+            carList: moreArr,
+          });
+        } else {
+          this.data.currentPage--
+        }
+
+        if (this.data.currentPage == 2) {
+          this.setData({
+            loadFinish: true,
+          });
+        } else {
+          this.setData({
+            loadFinish: false,
+          });
+        }
       }
-    ]
+
+      wx.hideLoading()
+
+      this.checkSource()
+
+    }, 2000);
+  },
+
+  checkSource() {
+    this.setData({
+      noSource: this.data.carList.length == 0,
+    });
+  },
+
+  // 下拉刷新
+  onPullDownRefresh: function () {
+    this.loadRequest(true);
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    this.loadRequest(false);
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.startPullDownRefresh()
   },
 
   /**
@@ -67,20 +126,6 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
 
   },
 

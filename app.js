@@ -3,7 +3,10 @@ App({
 
   //全局变量
   globalData: {
-    userInfo: null
+    userInfo: null,
+    width:null,
+    height:null,
+    px2rpx:null
   },
   /**
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
@@ -19,6 +22,7 @@ App({
     })
 
     this.getUserInfo();
+    this.getSystemInfo();
   },
 
   //获取用户信息
@@ -35,6 +39,18 @@ App({
       }
     })
   },
+
+  getSystemInfo(){
+    var that = this
+    wx.getSystemInfo({
+      success: function (res) {
+        that.globalData.width = res.screenWidth;
+        that.globalData.height= res.screenHeight;
+        that.globalData.px2rpx = 750 / res.screenWidth;
+      }
+    })
+  },
+  
 
   /**
    * 当小程序启动，或从后台进入前台显示，会触发 onShow

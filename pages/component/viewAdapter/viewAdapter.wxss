@@ -1,0 +1,11 @@
+/* pages/component/viewAdapter/viewAdapter.wxss */
+@import '../../../common/layout.wxss';
+
+.textStyle{
+    color: rgb(228, 27, 27);
+    font-size: 90rpx;
+}
+
+.btnStyle{
+    width:400rpx;
+}

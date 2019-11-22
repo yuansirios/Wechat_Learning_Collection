@@ -1,3 +1,4 @@
+
 <view>
   <block wx:for="{{list}}" wx:for-item="item" wx:key="index">
     <view class="cellStyle" bindtap="turnToDemo" data-component="{{item.component}}">

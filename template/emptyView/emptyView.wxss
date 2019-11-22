@@ -1,0 +1,7 @@
+/* template/emptyView/emptyView.wxss */
+@import '../../common/layout.wxss';
+
+.iconStyle{
+    width:300rpx;
+    height:300rpx;
+}

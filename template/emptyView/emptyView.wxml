@@ -1,0 +1,20 @@
+<!-- 参数：
+type:
+noSource 暂无数据
+noNet 暂无网络 
+
+事件传递
+noSourceClick
+noNetClick
+-->
+<template name="emptyView">
+    <view class="columnLayout,container,row-column-center">
+        <view wx:if="{{type == 'noSource'}}" catchtap="noSourceClick">
+            <image src="../../../imgs/noSource.png" class="iconStyle" />
+        </view>
+        <view wx:elif="{{type == 'noNet'}}" catchtap="noNetClick">
+            <image src="../../../imgs/noNet.png" class="iconStyle" />
+        </view>
+    </view>
+</template>
+

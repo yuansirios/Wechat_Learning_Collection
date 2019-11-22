@@ -1,14 +1,14 @@
 <view>数据绑定：{{message}}</view>
 <view data-name="{{theName}}">属性绑定</view>
 <view hidden="{{flag ? true : false}}">Hidden</view>
-<view>
+<view class="debugRed">
   1、列表渲染
   <block wx:for="{{items}}" wx:for-item="item" wx:key="index">
     <view>{{index}}:{{item.name}}</view>
   </block>
 </view>
 
-<view>
+<view class="debugGreen">
   2、条件渲染
   <view wx:if="{{condition === 1}}"> one </view>
   <view wx:elif="{{condition === 2}}"> two </view>
@@ -16,7 +16,7 @@
 </view>
 
 <!-- 内联样式 -->
-<view class="container" style="background-color:blue">
+<view style="background-color:blue">
   3、模板引用
   <template is="tempItem" data="{{...userInfo}}"></template>
 </view>
