@@ -24,23 +24,35 @@ function showToast(title) {
 }
 
 // 生成随机颜色
-function getRandomColor (){
+function getRandomColor() {
     //生成随机颜色值
-    var colorStr = Math.floor(Math.random()*0xFFFFFF).toString(16);
+    var colorStr = Math.floor(Math.random() * 0xFFFFFF).toString(16);
     //返回格式化的颜色字符串
-    return '#'+'000000'.substring(0,6-colorStr)+colorStr;
+    return '#' + '000000'.substring(0, 6 - colorStr) + colorStr;
 }
 
-function showModal(title,confirmText,cancelText,result){
+//获取网络状态
+function checkNetwork(callBack) {
+    wx.getNetworkType({
+        success: (result) => {
+            typeof callBack == "function" && callBack(true, result.networkType)
+        },
+        fail: () => {
+            typeof callBack == "function" && callBack(false, '无法连接网络')
+        },
+    });
+}
+
+function showModal(title, confirmText, cancelText, result) {
     wx.showModal({
         title: title,
         content: '',
         showCancel: true,
-        cancelText: cancelText?cancelText:null,
+        cancelText: cancelText ? cancelText : null,
         cancelColor: '#000000',
-        confirmText: confirmText?confirmText:null,
+        confirmText: confirmText ? confirmText : null,
         confirmColor: '#3CC51F',
-        success:result
+        success: result
     });
 }
 
@@ -48,6 +60,8 @@ module.exports = {
     saveData: saveData,
     getData: getData,
     removeData: removeData,
-    showToast:showToast,
-    showModal:showModal
+    showToast: showToast,
+    showModal: showModal,
+    getRandomColor:getRandomColor,
+    checkNetwork:checkNetwork
 };

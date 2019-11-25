@@ -51,7 +51,6 @@
     margin-top: 20rpx;
 }
 
-/* checkbox 选项框大小  */
 checkbox .wx-checkbox-input{
     transform:scale(0.7);
     margin-top: -6rpx;

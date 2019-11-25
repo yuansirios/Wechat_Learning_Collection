@@ -1,10 +1,14 @@
 // pages/component/baseDemo/baseDemo.js
+
+var utils = require('../../../common/utils.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    networkStatus:'',
     message: "Hello World!!!",
     theName: "Jack",
     flag: false,
@@ -54,7 +58,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    utils.checkNetwork((arg1,arg2)=>{
+      this.setData({
+        networkStatus:arg2
+      })
+    });
   },
 
   /**
