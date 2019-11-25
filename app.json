@@ -6,11 +6,11 @@
     "pages/component/navigatorTest/navigatorTest",
     "pages/component/layoutview/layoutview",
     "pages/component/loginAuthDemo/loginAuthDemo",
-    "pages/component/formDemo/formDemo",
     "pages/component/listDemo/listDemo",
     "template/emptyView/emptyView",
     "pages/component/baseDemo/baseDemo",
-    "pages/component/viewAdapter/viewAdapter"
+    "pages/component/viewAdapter/viewAdapter",
+    "pages/component/formDemo/formDemo"
   ],
   "tabBar": {
     "color": "#DC143C",

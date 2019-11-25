@@ -12,6 +12,7 @@ function removeData(key) {
     wx.removeStorageSync(key);
 }
 
+// 弹出toast
 function showToast(title) {
     wx.showToast({
         title: title,
@@ -20,6 +21,14 @@ function showToast(title) {
         duration: 1500,
         mask: true,
     });
+}
+
+// 生成随机颜色
+function getRandomColor (){
+    //生成随机颜色值
+    var colorStr = Math.floor(Math.random()*0xFFFFFF).toString(16);
+    //返回格式化的颜色字符串
+    return '#'+'000000'.substring(0,6-colorStr)+colorStr;
 }
 
 function showModal(title,confirmText,cancelText,result){

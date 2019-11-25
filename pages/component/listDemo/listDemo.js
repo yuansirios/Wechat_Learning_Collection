@@ -12,16 +12,16 @@ Page({
     loadFinish: false,
   },
 
-  noSourceClick(){
+  noSourceClick() {
     console.log('暂无数据')
   },
 
-  noNetClick(){
+  noNetClick() {
     console.log('暂无网络')
   },
 
   loadRequest(reload) {
-
+  
     if (!reload &&
       this.data.loadFinish) {
       return;
@@ -33,37 +33,43 @@ Page({
       mask: true
     });
 
+    let that = this;
+
     setTimeout(() => {
 
+      console.log(reload?'重新加载':'加载下一组');
+
       if (reload) {
-        this.data.currentPage = 0
-        this.setData({
+        that.setData({
           carList: require('./carList.js').carList,
           loadFinish: false,
+          currentPage: 0
         });
         // 停止下拉动作
         wx.stopPullDownRefresh();
       } else {
-
-        this.data.currentPage++
-
         var moreArr = require('./carList.js').carList
-        
+
+        let page = that.data.currentPage;
+
         if (moreArr.length > 0) {
-          moreArr = this.data.carList.concat(moreArr)
-          this.setData({
+          moreArr = that.data.carList.concat(moreArr)
+          that.setData({
             carList: moreArr,
+            currentPage: (page + 1)
           });
         } else {
-          this.data.currentPage--
+          that.setData({
+            currentPage: (page - 1)
+          });
         }
 
-        if (this.data.currentPage == 2) {
-          this.setData({
+        if (that.data.currentPage == 2){
+          that.setData({
             loadFinish: true,
           });
-        } else {
-          this.setData({
+        }else{
+          that.setData({
             loadFinish: false,
           });
         }
@@ -71,7 +77,9 @@ Page({
 
       wx.hideLoading()
 
-      this.checkSource()
+      that.checkSource()
+
+      console.log('刷新了第 ' + that.data.currentPage + ' 组数据');
 
     }, 2000);
   },
@@ -84,6 +92,7 @@ Page({
 
   // 下拉刷新
   onPullDownRefresh: function () {
+    console.log('.....onPullDownRefresh.....');
     this.loadRequest(true);
   },
 
@@ -91,6 +100,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    console.log('.....onReachBottom.....');
     this.loadRequest(false);
   },
 

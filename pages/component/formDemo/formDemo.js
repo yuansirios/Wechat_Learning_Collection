@@ -18,7 +18,67 @@ Page({
       { 'name': '1','value':"红色" },
       { 'name': '2','value':"蓝色" },
       { 'name': '3','value':"绿色" },
-    ]
+    ],
+    sexList:[
+      {name:'male',value:'男',checked:'true'},
+      {name:'female',value:'女'}
+    ],
+    regions:[
+      {name:'CHN',value:'中国',checked:'true'},
+      {name:'USA',value:'美国'},
+      {name:'BRA',value:'巴西'},
+      {name:'ENG',value:'英国'},
+      {name:'TUR',value:'法国'}
+    ],
+    time:'8:00',
+    date:'2016-11-1',
+    suggest:''
+  },
+
+  formSubmit:function(e){
+    console.log('提交表单')
+    console.log(e.detail.value)
+  },
+
+  formReset:function(e){
+    console.log('表单重置')
+    this.setData({
+      sexList:[
+        {name:'male',value:'男',checked:'true'},
+        {name:'female',value:'女'}
+      ],
+      regions:[
+        {name:'CHN',value:'中国',checked:'true'},
+        {name:'USA',value:'美国'},
+        {name:'BRA',value:'巴西'},
+        {name:'ENG',value:'英国'},
+        {name:'TUR',value:'法国'}
+      ],
+      time:'8:00',
+      date:'2016-11-1',
+      suggest:''
+    })
+  },
+
+  bindTimeChange:function(e){
+    console.log(e.detail.value)
+    this.setData({
+      time: e.detail.value
+    })
+  },
+
+  bindDateChange:function(e){
+    console.log(e.detail.value)
+    this.setData({
+      date: e.detail.value
+    })
+  },
+
+  inputchange:function(e){
+    console.log(e.detail.value)
+    this.setData({
+      suggest: e.detail.value
+    })
   },
 
   // 账号输入
