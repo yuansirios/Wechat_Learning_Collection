@@ -30,6 +30,13 @@ Page({
       phone:18888888888,
       address:"中国"
     },
+    imageUrls:[
+      {url:'../../../imgs/b1.png'},
+      {url:'../../../imgs/b2.png'},
+      {url:'../../../imgs/b3.png'},
+      {url:'../../../imgs/b4.png'}
+    ],
+    bannerHeight:'500rpx'
   },
 
   clickMe(e) {

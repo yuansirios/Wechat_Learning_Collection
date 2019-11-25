@@ -1,0 +1,6 @@
+
+.bannerStyle{
+    width:100%;
+    height:400rpx;
+    background: #d86464;
+}

@@ -2,15 +2,16 @@
   "pages": [
     "pages/component/component",
     "pages/mine/mine",
+    "pages/component/baseDemo/baseDemo",
     "pages/detail/detail",
     "pages/component/navigatorTest/navigatorTest",
     "pages/component/layoutview/layoutview",
     "pages/component/loginAuthDemo/loginAuthDemo",
     "pages/component/listDemo/listDemo",
-    "template/emptyView/emptyView",
-    "pages/component/baseDemo/baseDemo",
     "pages/component/viewAdapter/viewAdapter",
-    "pages/component/formDemo/formDemo"
+    "pages/component/formDemo/formDemo",
+    "template/emptyView/emptyView",
+    "template/swiperBanner/swiperBanner"
   ],
   "tabBar": {
     "color": "#DC143C",

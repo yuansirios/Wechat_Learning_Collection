@@ -1,3 +1,8 @@
+
+<import src="../../../template/swiperBanner/swiperBanner.wxml"/>
+
+<template is="autoBanner" data="{{imageUrls,bannerHeight}}"></template>
+
 <view>数据绑定：{{message}}</view>
 <view data-name="{{theName}}">属性绑定</view>
 <view hidden="{{flag ? true : false}}">Hidden</view>

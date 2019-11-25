@@ -1,0 +1,25 @@
+
+<!-- 参数：
+type:
+noSource 暂无数据
+noNet 暂无网络 
+
+事件传递
+noSourceClick
+noNetClick
+
+indicator-dots='true'	面板指示圆点
+autoplay='true'	自动播放
+interval='5000'	每次轮播间隔
+duration='1000'	轮播动画时长
+circular='true'	无缝衔接
+-->
+<template name="autoBanner">
+  <swiper class='bannerStyle' style='{{bannerHeight}}' indicator-dots='true' autoplay='true' interval='2000' duration='1000' circular='true'>
+    <block wx:for="{{imageUrls}}" wx:for-index="index" wx:key="item">
+      <swiper-item>
+        <image src='{{item.url}}' style="width: 100%;height:inherit;" mode='scaleToFill'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</template>
